@@ -5,8 +5,8 @@ exports.up = function(knex) {
         tbl.string('first_last_name').notNullable();
         tbl.string('email').unique().notNullable();
         tbl.string('password').notNullable();
-        tbl.boolean('is_host')
-        tbl.boolean('is_member')
+        tbl.boolean('is_host').notNullable();
+        tbl.boolean('is_member').notNullable();
     })
   
 };
