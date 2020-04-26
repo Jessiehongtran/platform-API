@@ -9,7 +9,7 @@ module.exports = {
     },
     useNullAsDefault: true,
     migrations: {
-      directory: './migrations'
+      directory: './data/migrations'
     },
     pool: {
       afterCreate: (conn, done) => {
@@ -23,10 +23,9 @@ module.exports = {
     client: 'pg',
     connection: process.env.DATABASE_URL,
     migrations: {
-      tableName: './migrations'
+      tableName: './data/migrations'
     }
   },
-
   ssl: true
 
 };

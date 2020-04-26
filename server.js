@@ -9,3 +9,12 @@ server.get('/', (req,res) => {
 })
 
 module.exports = server;
+
+
+/*
+Routes:
+- GET/POST projects
+- GET people who joined same project based on project id
+- GET/POST comments : join with users
+- GET host for projects
+*/
