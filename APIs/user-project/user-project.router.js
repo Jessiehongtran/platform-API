@@ -28,7 +28,6 @@ router.get('/', (req, res) => {
 //GET all people in the project
 router.get('/:id/people', (req, res) => {
     const id = req.params.id
-    console.log(id)
     projectModel.getProjectById(id)
                 .then(project => {
                     if (project){
