@@ -16,6 +16,8 @@ exports.up = function(knex) {
         .inTable('projectIdeas')
         .onDelete('CASCADE')
         .onUpdate('CASCADE')
+        tbl.boolean('is_host').notNullable();
+        tbl.boolean('is_member').notNullable();
     })
 };
 
