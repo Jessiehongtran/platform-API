@@ -9,6 +9,13 @@ exports.up = function(knex) {
           .inTable('users')
           .onDelete('CASCADE')
           .onUpdate('CASCADE')
+        tbl
+          .integer('project_id')
+          .unsigned()
+          .references('id')
+          .inTable('projectIdeas')
+          .onDelete('CASCADE')
+          .onUpdate('CASCADE')
         tbl.string('comment', 5000);
         tbl.time('created_at');
         

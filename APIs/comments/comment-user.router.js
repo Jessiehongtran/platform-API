@@ -13,6 +13,18 @@ router.get('/', (req,res) => {
 })
 
 
+//GET comments for each project
+router.get('/:id', (req,res) => {
+    const id = req.params.id
+    commentModel.getCommentOfProject(id)
+                .then(comments => {
+                    res.status(200).json(comments)
+                })
+                .catch(err => {
+                    res.status(500).json(err.message)
+                })
+})
+
 
 //POST a comment
 router.post('/', (req,res) => {
