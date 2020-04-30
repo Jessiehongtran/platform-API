@@ -55,5 +55,22 @@ router.patch('/edit/:id', (req, res) => {
                 })
 })
 
+//DELETE a project
+router.delete('/delete/:id', (req,res) => {
+    const id = req.params.id;
+    projectModel.getProjectById(id)
+                .then(project => {
+                    if (project){
+                        projectModel.deleteProject(id)
+                                    .then(count => {
+                                        res.status(200).json({messgae: `deleted ${count} project`})
+                                    })
+                                    .catch(err => res.status(500).json(err.message))
+                    }
+                    else {
+                        res.status(404).json({message: "project does not exist"})
+                    }
+                })
+} )
 
 module.exports = router;

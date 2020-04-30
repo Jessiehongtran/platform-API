@@ -22,11 +22,18 @@ function updateProject(id, change){
             .update(change)
 }
 
+function deleteProject(id){
+    return db("projectIdeas")
+            .where({id: id})
+            .del()
+}
+
 
 module.exports = {
     getProjects,
     addProject,
     getProjectById,
-    updateProject
+    updateProject,
+    deleteProject
     
 }
