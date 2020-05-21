@@ -1,7 +1,9 @@
 exports.up = function(knex) {
     return knex.schema.createTable('projectIdeas', tbl => {
         tbl.increments();
+        tbl.string('idea');
         tbl.string('project_name');
+        tbl.string('banner_color')
         tbl.string('category');
         tbl.string('target_user');
         tbl.string('impact');
