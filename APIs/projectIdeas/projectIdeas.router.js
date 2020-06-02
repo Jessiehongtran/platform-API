@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const projectModel = require('./projectIdeas.model');
+const protected = require('../../middlewares/restricted-middleware')
 
 //GET all projects
 router.get('/', (req,res) => {
@@ -13,7 +14,7 @@ router.get('/', (req,res) => {
 })
 
 //POST a project
-router.post('/', (req, res) => {
+router.post('/', protected, (req, res) => {
     const project = req.body
     projectModel.addProject(project)
                 .then(id => {
