@@ -25,7 +25,7 @@ router.post('/', (req,res) => {
               .then(id => {
                   const token = generateToken({id: id})
                   res.status(200).json({
-                      id,
+                      id:id,
                       token
                     })
                   
