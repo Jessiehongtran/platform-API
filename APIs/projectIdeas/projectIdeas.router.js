@@ -14,7 +14,7 @@ router.get('/', (req,res) => {
 })
 
 //POST a project
-router.post('/', protected, (req, res) => {
+router.post('/', (req, res) => {
     const project = req.body
     projectModel.addProject(project)
                 .then(id => {

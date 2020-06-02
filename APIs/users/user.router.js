@@ -23,7 +23,12 @@ router.post('/', (req,res) => {
     user.password = pwhashed;
     usersModel.addUser(user)
               .then(id => {
-                  res.status(200).json(id)
+                  const token = generateToken({id: id})
+                  res.status(200).json({
+                      id,
+                      token
+                    })
+                  
               })
               .catch(err => {
                   res.status(500).json(err.message)
