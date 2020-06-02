@@ -12,7 +12,7 @@ const sessionConfig = {
     name: 'monkey', //sid
     secret: 'keep it secret, keep it safe!',
     cookie: {
-        maxAge: 1000 * 30 * 2 * 60 * 24,
+        maxAge: 1 * 24 * 60 * 60 * 1000,
         secure: false, //true in production
         httpOnly: true
     },
