@@ -6,6 +6,7 @@ function getUsers(){
 
 function addUser(user){
     return db("users")
+            .returning("id")
             .insert(user)
             .then(ids => ({id: ids[0]}))
 }
