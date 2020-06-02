@@ -6,6 +6,7 @@ function getProjects(){
 
 function addProject(project){
     return db("projectIdeas")
+            .returning("id")
             .insert(project)
             .then(ids => ({id: ids[0]}))
 }
