@@ -10,6 +10,11 @@ function addUser(user){
             .then(ids => ({id: ids[0]}))
 }
 
+function findBy(filter){
+    return db("users")
+           .where(filter)
+}
+
 function getUserById(id){
     return db("users")
             .where({id: id})
@@ -19,6 +24,7 @@ function getUserById(id){
 module.exports = {
     getUsers,
     addUser,
+    findBy,
     getUserById
 }
 
