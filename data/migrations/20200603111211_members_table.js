@@ -12,7 +12,7 @@ exports.up = function(knex) {
         tbl.string('identity');
         tbl.string('why');
         tbl.string('role');
-        tbl.time('profileUrl');
+        tbl.string('profileUrl');
         
     })
 };
