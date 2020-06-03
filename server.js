@@ -30,7 +30,7 @@ server.use('/api/users', usersRouter)
 server.use('/api/comments', commentsRouter)
 server.use('/api/projects', projectsRouter)
 server.use('/api/user_project', userprojectRouter)
-server.user('/api/members', membersRouter)
+server.use('/api/members', membersRouter)
 
 server.get('/', (req,res) => {
     res.send("Hello from Express")
