@@ -7,6 +7,7 @@ const usersRouter = require('./APIs/users/user.router');
 const commentsRouter = require('./APIs/comments/comment-user.router');
 const projectsRouter = require('./APIs/projectIdeas/projectIdeas.router');
 const userprojectRouter = require('./APIs/user-project/user-project.router');
+const membersRouter = require('./APIs/members/members.router')
 
 const sessionConfig = {
     name: 'monkey', //sid
@@ -29,6 +30,7 @@ server.use('/api/users', usersRouter)
 server.use('/api/comments', commentsRouter)
 server.use('/api/projects', projectsRouter)
 server.use('/api/user_project', userprojectRouter)
+server.user('/api/members', membersRouter)
 
 server.get('/', (req,res) => {
     res.send("Hello from Express")
