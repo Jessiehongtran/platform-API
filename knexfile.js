@@ -12,6 +12,9 @@ module.exports = {
     migrations: {
       directory: './data/migrations'
     },
+    seeds: {
+      directory: './data/seeds'
+    },
     pool: {
       afterCreate: (conn, done) => {
         conn.run("PRAGMA foreign_keys = ON", done);
@@ -25,6 +28,9 @@ module.exports = {
     connection: process.env.DATABASE_URL,
     migrations: {
       directory: './data/migrations'
+    },
+    seeds: {
+      directory: './data/seeds'
     }
   },
   ssl: true
