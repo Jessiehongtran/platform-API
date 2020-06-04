@@ -11,7 +11,9 @@ function getCates(){
 }
 
 function addCate(cate){
+    console.log(cate)
     return db("category")
+            .returning("id")
             .insert(cate)
             .then(ids => ({id: ids[0]}))
 }
