@@ -15,5 +15,18 @@ router.post('/', (req,res) => {
               })
 })
 
+//GET members for each project
+router.get('/:id', (req, res) => {
+    const projectId = req.params.id
+    membersModel.getMemberForProject(projectId)
+                .then(members => {
+                    res.status(200).json(members)
+                    
+                })
+                .catch(err => {
+                    res.status(500).json(err.message)
+                })
+})
+
 
 module.exports = router;
