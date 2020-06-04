@@ -25,6 +25,30 @@ router.post('/', (req,res) => {
              })
 })
 
+//DEL a category
+router.delete('/delete/:id', (req,res) => {
+    const id = req.params.id
+    cateModel.findCate({id: id})
+             .then(cate => {
+                 if (cate){
+                    cateModel.delCate({id: id})
+                            .then(count => {
+                                res.status(200).json({message: `Del ${count} category`})
+                            })
+                            .catch(err => {
+                                res.status(500).json(err.message)
+                            })
+                 }
+                 else {
+                    res.status(401).json({message: "Category does not exist"})
+                 }
+             })
+             .catch(err => {
+                 res.status(500).json(err.message)
+             })
+    
+})
+
 //GET projects per cate
 router.get('/:id', (req,res) => {
     const id = req.params.id

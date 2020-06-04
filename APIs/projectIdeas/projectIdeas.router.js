@@ -46,7 +46,7 @@ router.patch('/edit/:id', (req, res) => {
                     if (project){
                         projectModel.updateProject(id, change)
                                     .then(count => {
-                                        res.status(200).json({messgae: `updated ${count} project`})
+                                        res.status(200).json({message: `updated ${count} project`})
                                     })
                                     .catch(err => res.status(500).json(err.message))
                     }

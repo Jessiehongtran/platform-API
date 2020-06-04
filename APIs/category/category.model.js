@@ -11,16 +11,29 @@ function getCates(){
 }
 
 function addCate(cate){
-    console.log(cate)
     return db("category")
             .returning("id")
             .insert(cate)
             .then(ids => ({id: ids[0]}))
 }
 
+function delCate(cateId){
+    return db("category")
+            .where(cateId)
+            .del()
+}
+
+function findCate(filter){
+    return db("category")
+            .where(filter)
+            .then(cates => cates[0])
+}
+
 
 module.exports = {
     getProjectsPerCate,
     getCates,
-    addCate
+    addCate,
+    delCate,
+    findCate
 }
