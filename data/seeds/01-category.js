@@ -5,11 +5,31 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('category').insert([
-        {id: 1, category: 'Web dev'},
-        {id: 2, category: 'Mobile'},
-        {id: 3, category: 'Game dev'},
-        {id: 4, category: 'Data science'},
-        {id: 5, category: 'Machine learning'}
+        {
+          id: 1, 
+          category: 'Web dev',
+          count_projects: 0
+        },
+        {
+          id: 2, 
+          category: 'Mobile',
+          count_projects: 0
+        },
+        {
+          id: 3, 
+          category: 'Game dev',
+          count_projects: 0
+        },
+        {
+          id: 4, 
+          category: 'Data science',
+          count_projects: 0
+        },
+        {
+          id: 5, 
+          category: 'Machine learning',
+          count_projects: 0
+        }
       ]);
     });
 };
