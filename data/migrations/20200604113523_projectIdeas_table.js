@@ -4,7 +4,13 @@ exports.up = function(knex) {
         tbl.increments();
         tbl.string('idea').notNullable();
         tbl.string('project_name');
-        tbl.string('category');
+        tbl
+          .integer('category_id')
+          .unsigned()
+          .references('id')
+          .inTable('category')
+          .onDelete('CASCADE')
+          .onUpdate('CASCADE')
         tbl.string('target_user');
         tbl.string('impact');
         tbl.string('human_resources');
@@ -17,3 +23,4 @@ exports.up = function(knex) {
 exports.down = function(knex) {
     return knex.schema.dropTableIfExists('projectIdeas')
 };
+
