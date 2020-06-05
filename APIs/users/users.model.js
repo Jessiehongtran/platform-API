@@ -8,7 +8,7 @@ function addUser(user){
     return db("users")
             .returning("id")
             .insert(user)
-            .then(ids => ({id: ids[0]}))
+            .then(ids => ids[0])
 }
 
 function findBy(filter){
