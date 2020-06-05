@@ -13,6 +13,18 @@ router.get('/', (req, res) => {
              })
 })
 
+//GET a category based on cateId
+router.get('/:id', (req,res) => {
+    const id = req.params.id
+    cateModel.findCate({id: id})
+             .then(cate => {
+                 res.status(200).json(cate)
+             })
+             .catch(err => {
+                 res.status(500).json(err.message)
+             })
+})
+
 //POST a category
 router.post('/', (req,res) => {
     const cate = req.body
@@ -50,7 +62,7 @@ router.delete('/delete/:id', (req,res) => {
 })
 
 //GET projects per cate
-router.get('/:id', (req,res) => {
+router.get('/projects/:id', (req,res) => {
     const id = req.params.id
     cateModel.getProjectsPerCate(id)
              .then(projects => {
