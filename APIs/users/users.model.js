@@ -12,6 +12,7 @@ function addUser(user){
 }
 
 function findBy(filter){
+    console.log('filter', filter)
     return db("users")
            .where(filter)
 }
