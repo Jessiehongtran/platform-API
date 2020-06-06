@@ -25,6 +25,8 @@ router.get('/:id', (req,res) => {
              })
 })
 
+//GET category_id based on category_name
+
 //POST a category
 router.post('/', (req,res) => {
     const cate = req.body
