@@ -23,10 +23,18 @@ function getUserById(id){
             .then(users => users[0])
 }
 
+function delUser(id){
+    return db("users")
+            .where({id: id})
+            .del()
+}
+
+
 module.exports = {
     getUsers,
     addUser,
     findBy,
-    getUserById
+    getUserById,
+    delUser
 }
 
