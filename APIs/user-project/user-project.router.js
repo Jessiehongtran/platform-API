@@ -14,6 +14,21 @@ router.post('/', (req,res) => {
                     })
 })
 
+
+//GET projects based on user_id
+router.get('/projects/:user_id', (req,res) => {
+    const user_id = req.params.user_id
+    console.log('user_id', user_id)
+    userProjectModel.getProjectsOfUser(user_id)
+                    .then(projects => {
+                        res.status(200).json(projects)
+                    })
+                    .catch(err => {
+                        res.status(500).json(err.message)
+                    })
+    
+})
+
 //GET user project
 router.get('/', (req, res) => {
     userProjectModel.getUserProject()
