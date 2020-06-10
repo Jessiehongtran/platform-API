@@ -45,6 +45,7 @@ router.post('/login', (req, res) => {
     usersModel.findBy({email})
               .first()
               .then(user => {
+                  console.log('found a user', user)
                   if (user && bcrypt.compareSync(password, user.password)){
                     //   req.session.user = user;
                     const token = generateToken(user)
