@@ -18,6 +18,7 @@ function getCommentOfProject(id){
             .join("users as u", "c.user_id", "u.id")
             .join("projectIdeas as p", "p.id", "c.project_id")
             .select(
+                "c.id as commentID",
                 "p.project_name",
                 "u.first_last_name",
                 "c.comment",

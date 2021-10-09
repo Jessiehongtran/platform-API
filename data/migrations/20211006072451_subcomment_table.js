@@ -2,7 +2,7 @@
 exports.up = function(knex) {
   return knex.schema.createTable('subcomment', tbl => {
       tbl.increments()
-      tbl.integer('subcomment_ID')
+      tbl.integer('comment_ID')
          .unsigned()
          .references('id')
          .inTable('comment_user')
