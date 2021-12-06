@@ -41,13 +41,3 @@ server.get('/', (req,res) => {
 })
 
 module.exports = server;
-
-
-/*
-Routes:
-x GET/POST projects
-x GET/POST comments : join with users
-x UPDATE join_count
-x GET host for projects
-x GET members for projects
-*/

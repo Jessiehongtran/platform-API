@@ -25,9 +25,10 @@ function getAllPeopleOfProject(projectId){
             .where({project_id: projectId})
             .join("users as u", "u.id", "up.user_id")
             .join("projectIdeas as p", "p.id", "up.project_id")
+            .join("category as c", "c.id", "p.category_id")
             .select(
                 "p.project_name",
-                "p.category",
+                "c.category",
                 "p.target_user",
                 "p.impact",
                 "p.join_count",
