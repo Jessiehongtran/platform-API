@@ -5,7 +5,7 @@ exports.up = function(knex) {
         tbl.string('first_last_name').notNullable();
         tbl.string('email').unique().notNullable();
         tbl.string('password').notNullable();
-        
+        tbl.string('profile_picture');
     })
   
 };

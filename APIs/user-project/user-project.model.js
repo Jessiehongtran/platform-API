@@ -53,6 +53,7 @@ function getHostOfProject(projectId){
                 "p.impact",
                 "p.join_count",
                 "u.first_last_name",
+                "u.profile_picture",
                 "u.email"
         
         )

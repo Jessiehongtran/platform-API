@@ -12,6 +12,7 @@ exports.up = function(knex) {
           .onDelete('CASCADE')
           .onUpdate('CASCADE')
         tbl.string('target_user');
+        tbl.string('dev_env');
         tbl.string('impact');
         tbl.string('human_resources');
         tbl.integer('join_count');
