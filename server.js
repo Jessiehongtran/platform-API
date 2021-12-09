@@ -10,6 +10,12 @@ const userprojectRouter = require('./APIs/user-project/user-project.router');
 const cateRouter = require('./APIs/category/category.router');
 const subcommentRouter = require('./APIs/subcomment/subcomment.router');
 
+const corsOptions = {
+    origin: 'http://localhost:3000',
+    credentials: true,
+    optionSuccessStatus: 200
+}
+
 const sessionConfig = {
     name: 'monkey', //sid
     secret: 'keep it secret, keep it safe!',
@@ -23,7 +29,7 @@ const sessionConfig = {
 };
 
 server.use(express.json());
-server.use(cors());
+server.use(cors(corsOptions));
 server.use(session(sessionConfig))
 
 
