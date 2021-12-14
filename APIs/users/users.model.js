@@ -11,6 +11,14 @@ function addUser(user){
             .then(ids => ids[0])
 }
 
+
+function updateUser(userId, change){
+    return db("users")
+            .where({ id: userId })
+            .update(change)
+           
+}
+
 function findBy(filter){
     console.log('filter', filter)
     return db("users")
@@ -35,6 +43,7 @@ module.exports = {
     addUser,
     findBy,
     getUserById,
-    delUser
+    delUser,
+    updateUser
 }
 

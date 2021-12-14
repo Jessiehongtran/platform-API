@@ -6,6 +6,7 @@ function addUserIntoProject(user_project_ids){
            
 }
 
+
 function getProjectsOfUser(userId){
     return db("user_project as up")
             .where({user_id: userId})
@@ -83,6 +84,6 @@ module.exports = {
     getAllPeopleOfProject,
     getHostOfProject,
     getMembersOfProject,
-    getProjectsOfUser
+    getProjectsOfUser,
 }
  

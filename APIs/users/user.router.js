@@ -91,6 +91,19 @@ router.get('/:id', (req,res) => {
               })
 })
 
+//UPDATE a user in a project
+router.patch('/:userId', (req,res) => {
+    const { userId }= req.params;
+    const change = req.body;
+    usersModel.updateUser(userId, change)
+                    .then(count => {
+                        res.status(200).json({message: `updated ${count} user`})
+                    })
+                    .catch(err => {
+                        res.status(500).json(err.message)
+                    })
+})
+
 //DEL a user by id
 router.delete('/del/:id', (req,res) => {
     const id = req.params.id
