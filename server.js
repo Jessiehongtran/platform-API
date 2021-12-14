@@ -10,7 +10,7 @@ const userprojectRouter = require('./APIs/user-project/user-project.router');
 const cateRouter = require('./APIs/category/category.router');
 const subcommentRouter = require('./APIs/subcomment/subcomment.router');
 
-const whitelist = ['http://localhost:3000', 'https://makers-community.netlify.app/']
+const whitelist = ['http://localhost:3000', 'https://makers-community.netlify.app']
 
 const corsOptions = {
     origin: (origin, callback) => {
